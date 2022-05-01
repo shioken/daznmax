@@ -1,0 +1,20 @@
+{
+    "name": "DAZN動画画面幅をウィンドウサイズに合わせる",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "description": "DAZNの動画画面をウィンドウサイズに合わせて表示する拡張機能です",
+    "permissions": ["storage"],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.dazn.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "browser_action": {
+        "default_popup": "popup.html"
+    }
+}
