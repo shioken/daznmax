@@ -1,10 +1,14 @@
 const applyShowPanel = () => {
     chrome.storage.local.get("maximized", function (value) {
         maintag = document.getElementsByTagName('main');
-        maintag[0].style["maxWidth"] = "100%";
+        if (maintag.length > 0) {
+            maintag[0].style["maxWidth"] = "100%";
+        }
 
-        var e = document.getElementsByClassName("main__player-aside--23JGc")        
-        e[0].remove();
+        asides = document.getElementsByTagName("aside");
+        if (asides.length > 0) {
+            asides[0].remove();
+        }
     });
 }
 
